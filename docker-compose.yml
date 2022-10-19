@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  go-api:
+    container_name: go-api
+    build:
+      context: .
+      dockerfile: docker/local/Dockerfile
+    tty: true
+    ports:
+      - 8080:8080
+    volumes:
+      - type: bind
+        source: ./
+        target: /go-api/
